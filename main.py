@@ -21,9 +21,9 @@ def generate_secret_number():
     i = random.sample(range(1, 4), 1)[0]
     number = random.sample(range(10), 4)
     if number[0] == 0:
-        number[0], number[1] = number[1], number[0]
+        number[0], number[i] = number[i], number[0]
+    print(number)
     return number
-
 
 def validate_input(user_input):
     if len(user_input) != 4:
