@@ -41,7 +41,7 @@ def validate_input(user_input):
     Návratová hodnota:
     tuple: (bool, str) - zda je vstup validní, a případná chybová zpráva
     """
-    
+
     if len(user_input) != 4:
         return False, "Your guess must be exactly 4 digits."
     if not user_input.isdigit():
@@ -123,8 +123,7 @@ def play_game():
             print(f"That’s amazing! Time taken: {duration} seconds")
             break
 
-
- if __name__ == "__main__":
-     print_intro()
-     play_game()
+if __name__ == "__main__":
+    print_intro()
+    play_game()
 
