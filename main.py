@@ -124,9 +124,7 @@ def play_game():
             break
 
 
-# if __name__ == "__main__":
-#     print_intro()
-#     play_game()
+ if __name__ == "__main__":
+     print_intro()
+     play_game()
 
-print_intro()
-play_game()
