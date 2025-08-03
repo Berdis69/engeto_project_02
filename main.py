@@ -9,16 +9,15 @@ import random
 
 import time
 
-separator = "-"
-length_separator = 60
+separator = "-" * 60
 length_secret_number = 4
 
 def print_intro():
     print("Hi there!")
-    print(separator * length_separator)
+    print(separator)
     print(f"I've generated a random {length_secret_number} digit number for you.")
     print("Let's play a Bulls and Cows game.")
-    print(separator * length_separator)
+    print(separator)
 
 def generate_secret_number():
     """
@@ -29,10 +28,10 @@ def generate_secret_number():
     list: List of 4 unique digits [1, 2, 3, 4]
     """
     num_digits = length_secret_number
-    digit_pool = 10 # total number of digits (0-9)
-    replacement_index = random.sample(range(1, length_secret_number), 1)[0]
+    digit_pool = 10 # total number of digits (0-9) 
     number = random.sample(range(digit_pool), num_digits) 
     if number[0] == 0:
+        replacement_index = random.randint(1, length_secret_number -1)
         number[0], number[replacement_index] = number[replacement_index], number[0]
     return number
 
@@ -119,7 +118,7 @@ def play_game():
 
         if bulls == length_secret_number:
             duration = round(time.time() - start_time)
-            print(separator * length_separator)
+            print(separator)
             print(f"Correct, you've guessed the right number in {guesses} guesses!")
             print(f"That is amazing! Time taken: {duration} seconds")
             break
